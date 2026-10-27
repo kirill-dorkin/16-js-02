@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0c10" />
+  <meta name="description" content="JS Lab — интерактивный урок JavaScript №2: типы данных, typeof и приведение типов." />
+  <title>JS Lab — JavaScript · Урок 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=1-0" />
+  <script src="./app.js?v=1-0" defer></script>
+</head>
+<body>
+  <div class="viewport">
+    <div class="deck" id="deck">
+      <main class="stage" id="stage" aria-label="Слайды урока" aria-live="polite"></main>
+
+      <footer class="bar">
+        <div class="bar-left">
+        <a class="brand" href="#1" aria-label="К первому слайду"><span class="brand-mark" aria-hidden="true">{ }</span><span>js lab</span><small>JavaScript · урок 2</small></a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Сменить тему"><span>☀</span>Светлая</button>
+        </div>
+        <div class="segments" id="segments" aria-hidden="true"></div>
+        <div class="bar-right">
+          <span class="bar-section" id="sectionTitle">Начало</span>
+          <span class="bar-count" id="slideCounter">01 / 23</span>
+          <button class="nav-btn" id="prevBtn" type="button" aria-label="Предыдущий слайд">←</button>
+          <button class="nav-btn" id="nextBtn" type="button" aria-label="Следующий слайд">→</button>
+        </div>
+      </footer>
+
+      <nav class="hud" id="hud" aria-label="Настройки презентации">
+        <strong class="hud-title" id="currentTitle">Типы данных</strong>
+        <button class="hud-btn" id="outlineBtn" type="button" title="Все слайды (G)">Слайды <kbd>G</kbd></button>
+        <button class="hud-btn" id="notesBtn" type="button" title="Заметки (N)">Заметки <kbd>N</kbd></button>
+        <button class="hud-btn" id="themeBtn" type="button" title="Тема (T)">Тема <kbd>T</kbd></button>
+        <button class="hud-btn" id="fullscreenBtn" type="button" title="Полный экран (F)">Экран <kbd>F</kbd></button>
+      </nav>
+    </div>
+  </div>
+
+  <div class="overlay" id="outlineOverlay" hidden><div class="overlay-shade" data-close></div><aside class="side-panel" role="dialog" aria-modal="true" aria-label="Содержание"><div class="side-head"><div><small>НАВИГАЦИЯ</small><h2>Все слайды</h2></div><button class="close-btn" data-close type="button" aria-label="Закрыть">✕</button></div><div class="outline-list" id="outlineList"></div></aside></div>
+  <div class="overlay" id="notesOverlay" hidden><div class="overlay-shade" data-close></div><aside class="side-panel" role="dialog" aria-modal="true" aria-label="Заметки преподавателя"><div class="side-head"><div><small>ТОЛЬКО ДЛЯ ПРЕПОДАВАТЕЛЯ</small><h2>Подсказки к слайду</h2></div><button class="close-btn" data-close type="button" aria-label="Закрыть">✕</button></div><div class="notes-content" id="notesContent"></div><div class="teacher-shortcuts"><b>Клавиши</b><p>← → — слайды · Пробел / ↓ — шаг демо · G — оглавление · N — заметки · T — тема · F — экран · Esc — закрыть</p></div></aside></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
