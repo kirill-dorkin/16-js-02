@@ -533,7 +533,7 @@ document.getElementById('nextBtn').addEventListener('click', () => go(current + 
 document.getElementById('outlineBtn').addEventListener('click', () => toggleOverlay('outlineOverlay'));
 document.getElementById('notesBtn').addEventListener('click', () => toggleOverlay('notesOverlay'));
 function setThemeLabel() { const light = document.body.classList.contains('light'); document.getElementById('themeToggle').innerHTML = light ? '<span>☾</span>Тёмная' : '<span>☀</span>Светлая'; }
-function toggleTheme() { document.body.classList.toggle('light'); try { localStorage.setItem('js-lab-theme', document.body.classList.contains('light') ? 'light' : 'dark'); } catch (e) { /* */ } setThemeLabel(); }
+function toggleTheme() { document.body.classList.toggle('light'); try { localStorage.setItem('js-lab-theme-v2', document.body.classList.contains('light') ? 'light' : 'dark'); } catch (e) { /* */ } setThemeLabel(); }
 document.getElementById('themeBtn').addEventListener('click', toggleTheme);
 document.getElementById('themeToggle').addEventListener('click', (e) => { e.currentTarget.blur(); toggleTheme(); });
 document.getElementById('fullscreenBtn').addEventListener('click', () => { if (document.fullscreenElement) document.exitFullscreen?.(); else document.documentElement.requestFullscreen?.(); });
@@ -557,7 +557,7 @@ window.addEventListener('keydown', (e) => {
   else if (e.key.toLowerCase() === 't') document.getElementById('themeBtn').click();
   else if (e.key.toLowerCase() === 'f') document.getElementById('fullscreenBtn').click();
 }, true);
-try { if (localStorage.getItem('js-lab-theme') === 'light') document.body.classList.add('light'); } catch (e) { /* */ }
+try { if (localStorage.getItem('js-lab-theme-v2') === 'dark') document.body.classList.remove('light'); else document.body.classList.add('light'); } catch (e) { document.body.classList.add('light'); }
 setThemeLabel();
 // Холст 1920×1080 масштабируется под окно
 const deck = document.getElementById('deck');
